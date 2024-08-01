@@ -1,12 +1,12 @@
 package com.vincenzo.hellospring;
 
-import java.io.BufferedInputStream;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.math.BigDecimal;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.LocalDateTime;
 import java.util.stream.Collectors;
@@ -22,6 +22,15 @@ public class PaymentService {
         bufferedReader.close();
 
         System.out.println(response);
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        ExRateDate exRateDate = objectMapper.readValue(response, ExRateDate.class);
+        System.out.println(exRateDate);
+        System.out.println();
+
+        BigDecimal exKrwRate = exRateDate.rates().get("KRW");
+        System.out.println(exKrwRate);
+
 
         // 금액 계산
         // 유효 시간 계산
