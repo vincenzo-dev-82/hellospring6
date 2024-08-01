@@ -21,21 +21,18 @@ public class PaymentService {
         String response = bufferedReader.lines().collect(Collectors.joining());
         bufferedReader.close();
 
-        System.out.println(response);
-
         ObjectMapper objectMapper = new ObjectMapper();
         ExRateDate exRateDate = objectMapper.readValue(response, ExRateDate.class);
-        System.out.println(exRateDate);
-        System.out.println();
 
         BigDecimal exKrwRate = exRateDate.rates().get("KRW");
-        System.out.println(exKrwRate);
-
 
         // 금액 계산
-        // 유효 시간 계산
+        BigDecimal convertedAmount = foreignCurrencyAmount.multiply(exKrwRate);
 
-        return new Payment(orderId, currency, foreignCurrencyAmount, BigDecimal.ZERO, BigDecimal.ZERO, LocalDateTime.now());
+        // 유효 시간 계산
+        LocalDateTime validUntil = LocalDateTime.now().plusMinutes(30);
+
+        return new Payment(orderId, currency, foreignCurrencyAmount, exKrwRate, convertedAmount, validUntil);
     }
 
     public static void main(String[] args) throws IOException {
