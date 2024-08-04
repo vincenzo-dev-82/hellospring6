@@ -1,4 +1,4 @@
-package com.vincenzo.hellospring;
+package com.vincenzo.hellospring.payment;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

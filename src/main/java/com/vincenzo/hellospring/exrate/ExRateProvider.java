@@ -1,4 +1,4 @@
-package com.vincenzo.hellospring;
+package com.vincenzo.hellospring.exrate;
 
 import java.io.IOException;
 import java.math.BigDecimal;

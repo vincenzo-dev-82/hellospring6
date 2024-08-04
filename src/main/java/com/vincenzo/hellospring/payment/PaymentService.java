@@ -1,5 +1,6 @@
-package com.vincenzo.hellospring;
+package com.vincenzo.hellospring.payment;
 
+import com.vincenzo.hellospring.exrate.ExRateProvider;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;

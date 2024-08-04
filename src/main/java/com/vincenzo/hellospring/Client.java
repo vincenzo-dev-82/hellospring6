@@ -1,5 +1,7 @@
 package com.vincenzo.hellospring;
 
+import com.vincenzo.hellospring.payment.Payment;
+import com.vincenzo.hellospring.payment.PaymentService;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

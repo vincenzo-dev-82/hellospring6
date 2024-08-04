@@ -1,4 +1,4 @@
-package com.vincenzo.hellospring;
+package com.vincenzo.hellospring.exrate;
 
 import org.springframework.stereotype.Component;
 
