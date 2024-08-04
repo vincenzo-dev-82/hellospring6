@@ -14,35 +14,27 @@ public class SortTest {
     @BeforeEach
     void beforeach() {
         sort = new Sort();
+        System.out.println(sort); // 항상 새로운 객체를 생성하도록 하여 각 테스트가 순서에 상관없이 동일한 결과를 만들어 내어야만 한다
     }
 
     @Test
     void sort() {
-        // 준비 (given)
-        Sort sort = new Sort();
-        // 실행 (when)
         List<String> list = sort.sortByLength(Arrays.asList("aa", "b"));
-        // 검증 (then)
+
         Assertions.assertThat(list).isEqualTo(List.of("b", "aa"));
     }
 
     @Test
     void sort3Items() {
-        // 준비 (given)
-        Sort sort = new Sort();
-        // 실행 (when)
         List<String> list = sort.sortByLength(Arrays.asList("aa", "ccc", "b"));
-        // 검증 (then)
+
         Assertions.assertThat(list).isEqualTo(List.of("b", "aa", "ccc"));
     }
 
     @Test
     void sortAlreadySorted() {
-        // 준비 (given)
-        Sort sort = new Sort();
-        // 실행 (when)
         List<String> list = sort.sortByLength(Arrays.asList("b", "aa", "ccc"));
-        // 검증 (then)
+
         Assertions.assertThat(list).isEqualTo(List.of("b", "aa", "ccc"));
     }
 }
