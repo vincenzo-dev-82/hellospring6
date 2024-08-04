@@ -8,15 +8,15 @@ public class Payment {
     private Long orderId;
     private String currency;
     private BigDecimal foreignCurrencyAmount;
-    private BigDecimal exAmoutn;
+    private BigDecimal exRate;
     private BigDecimal convertedAmount;
     private LocalDateTime validUnit;
 
-    public Payment(Long orderId, String currency, BigDecimal foreignCurrencyAmount, BigDecimal exAmoutn, BigDecimal convertedAmount, LocalDateTime validUnit) {
+    public Payment(Long orderId, String currency, BigDecimal foreignCurrencyAmount, BigDecimal exRate, BigDecimal convertedAmount, LocalDateTime validUnit) {
         this.orderId = orderId;
         this.currency = currency;
         this.foreignCurrencyAmount = foreignCurrencyAmount;
-        this.exAmoutn = exAmoutn;
+        this.exRate = exRate;
         this.convertedAmount = convertedAmount;
         this.validUnit = validUnit;
     }
@@ -33,8 +33,8 @@ public class Payment {
         return foreignCurrencyAmount;
     }
 
-    public BigDecimal getExAmoutn() {
-        return exAmoutn;
+    public BigDecimal getExRate() {
+        return exRate;
     }
 
     public BigDecimal getConvertedAmount() {
@@ -51,7 +51,7 @@ public class Payment {
                 "orderId=" + orderId +
                 ", currency='" + currency + '\'' +
                 ", foreignCurrencyAmount=" + foreignCurrencyAmount +
-                ", exAmoutn=" + exAmoutn +
+                ", exRate=" + exRate +
                 ", convertedAmount=" + convertedAmount +
                 ", validUnit=" + validUnit +
                 '}';
