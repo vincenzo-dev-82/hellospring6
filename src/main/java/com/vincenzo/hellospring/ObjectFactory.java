@@ -10,26 +10,31 @@ public class ObjectFactory {
 
     @Bean
     public PaymentService paymentService() {
-        return new PaymentService(exRateProvider());
+        return new PaymentService(cachedExRateProvider());
     }
 
+//    @Bean
+//    public OrderService orderService() {
+//        return new OrderService(exRateProvider());
+//    }
+
     @Bean
-    public OrderService orderService() {
-        return new OrderService(exRateProvider());
+    public ExRateProvider cachedExRateProvider() {
+        return new CachedExRateProvider(exRateProvider());
     }
 
     @Bean
     public ExRateProvider exRateProvider() {
-        return new SimpleExRateProvider();
+        return new WebApiExRateProvider();
     }
 
 }
 
-class OrderService {
-
-    ExRateProvider exRateProvider;
-
-    OrderService(ExRateProvider exRateProvider) {
-        this.exRateProvider = exRateProvider;
-    }
-}
+//class OrderService {
+//
+//    ExRateProvider exRateProvider;
+//
+//    OrderService(ExRateProvider exRateProvider) {
+//        this.exRateProvider = exRateProvider;
+//    }
+//}
