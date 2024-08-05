@@ -13,7 +13,7 @@ public class Client {
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
-        BeanFactory beanFactory = new AnnotationConfigApplicationContext(ObjectFactory.class);
+        BeanFactory beanFactory = new AnnotationConfigApplicationContext(PaymentConfig.class);
         PaymentService paymentService = beanFactory.getBean(PaymentService.class);
 
 //        OrderService orderService = beanFactory.getBean(OrderService.class);

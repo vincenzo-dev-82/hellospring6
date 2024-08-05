@@ -1,6 +1,6 @@
 package com.vincenzo.hellospring.payment;
 
-import com.vincenzo.hellospring.TestObjectFactory;
+import com.vincenzo.hellospring.TestPaymentConfig;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -11,12 +11,14 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.time.Clock;
 
 @ExtendWith(SpringExtension.class)
-@ContextConfiguration(classes = TestObjectFactory.class)
+@ContextConfiguration(classes = TestPaymentConfig.class)
 class PaymentServiceSpringTest {
 
     @Autowired PaymentService paymentService;
+    @Autowired Clock clock;
     @Autowired ExRateProviderStub exRateProviderStub;
 
     @Test
@@ -41,5 +43,6 @@ class PaymentServiceSpringTest {
 //        Assertions.assertThat(payment.getValidUnit()).isAfter(LocalDateTime.now());
 //        Assertions.assertThat(payment.getValidUnit()).isBefore(LocalDateTime.now().plusMinutes(30));
     }
+
 
 }
