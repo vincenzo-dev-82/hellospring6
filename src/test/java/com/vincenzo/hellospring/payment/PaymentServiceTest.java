@@ -11,18 +11,18 @@ class PaymentServiceTest {
 
     @Test
     @DisplayName("prepare 메서드가 요구사항 3가지를 잘 충족했는지 검증")
-    void prepare() throws IOException {
+    void convertedAmount() throws IOException {
 
-        getPayment(BigDecimal.valueOf(500), BigDecimal.valueOf(5_000));
-        getPayment(BigDecimal.valueOf(1_000), BigDecimal.valueOf(10_000));
-        getPayment(BigDecimal.valueOf(3_000), BigDecimal.valueOf(30_000));
+        testAmount(BigDecimal.valueOf(500), BigDecimal.valueOf(5_000));
+        testAmount(BigDecimal.valueOf(1_000), BigDecimal.valueOf(10_000));
+        testAmount(BigDecimal.valueOf(3_000), BigDecimal.valueOf(30_000));
 
         // 원화환산금액의 유효시간 계산
 //        Assertions.assertThat(payment.getValidUnit()).isAfter(LocalDateTime.now());
 //        Assertions.assertThat(payment.getValidUnit()).isBefore(LocalDateTime.now().plusMinutes(30));
     }
 
-    private static void getPayment(BigDecimal exRate, BigDecimal convertedAmount) throws IOException {
+    private static void testAmount(BigDecimal exRate, BigDecimal convertedAmount) throws IOException {
 
         PaymentService paymentService = new PaymentService(new ExRateProviderStub(exRate));
 
