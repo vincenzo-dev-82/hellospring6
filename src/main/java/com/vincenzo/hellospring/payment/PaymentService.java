@@ -21,11 +21,10 @@ public class PaymentService {
 
     public Payment prepare(Long orderId, String currency, BigDecimal foreignCurrencyAmount) throws IOException {
 
-        BigDecimal exKrwRate = exRateProvider.getExRate(currency); // 환율 가져오기
-        BigDecimal convertedAmount = foreignCurrencyAmount.multiply(exKrwRate); // 금액 계산
-        LocalDateTime validUntil = LocalDateTime.now(clock).plusMinutes(30); // 유효 시간 계산
-
-        return new Payment(orderId, currency, foreignCurrencyAmount, exKrwRate, convertedAmount, validUntil);
+        BigDecimal exRate = exRateProvider.getExRate(currency); // 환율 가져오기
+//        BigDecimal convertedAmount = foreignCurrencyAmount.multiply(exKrwRate); // 금액 계산
+//        LocalDateTime validUntil = LocalDateTime.now(clock).plusMinutes(30); // 유효 시간 계산
+        return Payment.createPrepared(orderId, currency, foreignCurrencyAmount, exRate, LocalDateTime.now(clock));
     }
 
 }
