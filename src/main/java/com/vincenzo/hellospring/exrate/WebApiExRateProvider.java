@@ -2,16 +2,13 @@ package com.vincenzo.hellospring.exrate;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.vincenzo.hellospring.api.SimpleApiExecutor;
 import org.springframework.stereotype.Component;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.math.BigDecimal;
-import java.net.HttpURLConnection;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.stream.Collectors;
 
 @Component
 public class WebApiExRateProvider implements ExRateProvider {
@@ -33,7 +30,7 @@ public class WebApiExRateProvider implements ExRateProvider {
 
         String response;
         try {
-            response = executeApi(uri);
+            response = new SimpleApiExecutor().execute(uri);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -52,13 +49,13 @@ public class WebApiExRateProvider implements ExRateProvider {
         return exRateDate.rates().get("KRW");
     }
 
-    private static String executeApi(URI uri) throws IOException {
-        String response;
-        HttpURLConnection connection = (HttpURLConnection) uri.toURL().openConnection();
-
-        try(BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
-            response = bufferedReader.lines().collect(Collectors.joining());
-        }
-        return response;
-    }
+//    private static String executeApi(URI uri) throws IOException {
+//        String response;
+//        HttpURLConnection connection = (HttpURLConnection) uri.toURL().openConnection();
+//
+//        try(BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
+//            response = bufferedReader.lines().collect(Collectors.joining());
+//        }
+//        return response;
+//    }
 }
