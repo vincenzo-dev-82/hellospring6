@@ -1,4 +1,3 @@
-
 ## 섹션1 스프링 개발 시작하기
 
 ## 섹션2 오브젝트와 의존관계
@@ -53,3 +52,17 @@
   * DB의 에러코드와 데이터 엑세스 기술에 독립적인 예외 구조
   * 적절한 예외 번역(exception translation) 도구를 제공
 
+## 섹션6 서비스 추상화
+### 서비스란 무엇인가?
+* 서비스의 종류
+  * 애플리케이션 서비스(application service)
+    * @Service
+* 도메인 서비스(domain service)
+* 인프라 서비스(infrastructure service)
+  * 도메인/애플리케이션 로직에 참여하지 않는, 기술을 제공하는 서비스 
+  * 메일, 캐시, 트랜잭션, 메시징 ... 
+  * 서비스 추상화 대상
+### 애플리케이이션 서비스 도입
+
+## 인프런 강의 참고
+### https://www.inflearn.com/course/%ED%86%A0%EB%B9%84%EC%9D%98-%EC%8A%A4%ED%94%84%EB%A7%816-%EC%9D%B4%ED%95%B4%EC%99%80-%EC%9B%90%EB%A6%AC/dashboard

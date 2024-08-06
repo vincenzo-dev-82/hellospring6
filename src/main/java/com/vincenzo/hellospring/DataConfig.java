@@ -54,11 +54,6 @@ public class DataConfig {
     }
 
     @Bean
-    public OrderRepository orderRepository() {
-        return new OrderRepository();
-    }
-
-    @Bean
     public JdbcTemplate jdbcTemplate(DataSource dataSource) {
         return new JdbcTemplate(dataSource);
     }
