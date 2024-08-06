@@ -12,3 +12,5 @@
 ## 섹션4 템플릿
 ### 스프링과 JDK업그레이드
 * JDK21, Spring6.1.3, SpringBoot3.2.2
+### 변하는 코드 분리하기 - 메서드 추출
+* option + command + m 
