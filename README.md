@@ -29,4 +29,11 @@
 ### ExRateExecutor 콜백
 ### ApiTemplate 분리
 ### 디폴트콜백과 템플릿빈
+### 스프링이 제공하는 템플릿
+* RestTemplate
+* JdbcTemplate
+* JmsTemplate
+* TransactionTemplate
+* JpaTemplate
+* HibernateTemplate
 
