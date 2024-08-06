@@ -1,6 +1,8 @@
 package com.vincenzo.hellospring;
 
+import com.vincenzo.hellospring.data.OrderRepository;
 import jakarta.persistence.Column;
+import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -38,6 +40,10 @@ public class DataConfig {
         return emf;
     }
 
+    @Bean
+    public OrderRepository orderRepository(EntityManagerFactory emf) {
+        return new OrderRepository(emf);
+    }
 
     @Bean
     public JdbcTemplate jdbcTemplate(DataSource dataSource) {
