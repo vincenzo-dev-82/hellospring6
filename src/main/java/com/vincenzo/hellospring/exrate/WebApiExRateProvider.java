@@ -1,10 +1,10 @@
 package com.vincenzo.hellospring.exrate;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.vincenzo.hellospring.api.ApiExecutor;
 import com.vincenzo.hellospring.api.ExRateExtractor;
 import com.vincenzo.hellospring.api.SimpleApiExecutor;
+import com.vincenzo.hellospring.api.ErApiExRateExtractor;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -22,12 +22,8 @@ public class WebApiExRateProvider implements ExRateProvider {
         return runApiForExRate(
                 url,
                 new SimpleApiExecutor(),
-                response -> {
-                    ObjectMapper objectMapper = new ObjectMapper();
-                    ExRateDate exRateDate = objectMapper.readValue(response, ExRateDate.class);
-                    System.out.println("API Rates : " + exRateDate.rates().get("KRW"));
-                    return exRateDate.rates().get("KRW");
-                }); // 이것이 콜백이다
+                new ErApiExRateExtractor()
+        ); // 이것이 콜백이다
     }
 
     private static BigDecimal runApiForExRate(
