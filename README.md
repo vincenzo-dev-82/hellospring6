@@ -13,7 +13,7 @@
 ### 스프링과 JDK업그레이드
 * JDK21, Spring6.1.3, SpringBoot3.2.2
 ### 변하는 코드 분리하기 - 메서드 추출
-* option + command + m 
+* Option + Command + M
 ### 변하지 않는 코드 분리하기 - 메서드 추출
 * 템플릿(Template)
   * 템플릿은 어떤 목적을 위해 미리 만들어둔 모양이 있는 틀
@@ -48,5 +48,8 @@
 * Introduce Variable (공통변수생성)
   * Ctrl + Command + V
 * 예외의 확장성을 고려하여 예외를를 일정하게 처리할 수 있어야만 한다
-
+### DataAccessException과 예외추상화
+* DataAccessException
+  * DB의 에러코드와 데이터 엑세스 기술에 독립적인 예외 구조
+  * 적절한 예외 번역(exception translation) 도구를 제공
 
