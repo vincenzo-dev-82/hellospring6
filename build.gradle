@@ -32,3 +32,9 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+//test {
+//    // previous JVM options
+//    // WARNING: A Java agent has been loaded dynamically
+//    jvmArgs("-noverify", "-XX:+EnableDynamicAgentLoading", "-Djdk.instrument.traceUsage") // add this
+//}
