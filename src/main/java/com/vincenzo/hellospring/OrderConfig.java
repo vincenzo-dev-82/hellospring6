@@ -1,6 +1,7 @@
 package com.vincenzo.hellospring;
 
-import com.vincenzo.hellospring.data.OrderRepository;
+import com.vincenzo.hellospring.data.JpaOrderRepository;
+import com.vincenzo.hellospring.order.OrderRepository;
 import com.vincenzo.hellospring.order.OrderService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,7 +14,7 @@ public class OrderConfig {
 
     @Bean
     public OrderRepository orderRepository() {
-        return new OrderRepository();
+        return new JpaOrderRepository();
     }
 
     @Bean

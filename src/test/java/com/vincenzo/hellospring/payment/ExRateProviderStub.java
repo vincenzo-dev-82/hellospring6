@@ -2,7 +2,6 @@ package com.vincenzo.hellospring.payment;
 
 import com.vincenzo.hellospring.exrate.ExRateProvider;
 
-import java.io.IOException;
 import java.math.BigDecimal;
 
 public class ExRateProviderStub implements ExRateProvider {

@@ -1,6 +1,5 @@
 package com.vincenzo.hellospring.order;
 
-import com.vincenzo.hellospring.data.OrderRepository;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.support.TransactionTemplate;

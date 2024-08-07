@@ -1,8 +1,5 @@
 package com.vincenzo.hellospring;
 
-import com.vincenzo.hellospring.data.OrderRepository;
-import jakarta.persistence.Column;
-import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.annotation.Bean;
