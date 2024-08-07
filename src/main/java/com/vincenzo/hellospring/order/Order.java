@@ -1,21 +1,11 @@
 package com.vincenzo.hellospring.order;
 
-import jakarta.persistence.*;
-
 import java.math.BigDecimal;
 
-
-@Entity
-@Table(name = "orders")
 public class Order {
 
-    @Id
-    @GeneratedValue
     private Long id;
-
-    @Column(unique = true)
     private String no;
-
     private BigDecimal total;
 
     public Order() {} // JPA 사용 시 기본생성자는 필수

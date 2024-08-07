@@ -63,7 +63,8 @@
   * 메일, 캐시, 트랜잭션, 메시징 ... 
   * 서비스 추상화 대상
 ### 애플리케이이션 서비스 도입
-### 
+### 기술에 독립적인 애플리케이션 서비스
+* Order클래스를 /META-INF/orm.xml 에 정의하여 어노테이션 설정 삭제
 
 ## 인프런 강의 참고
 ### https://www.inflearn.com/course/%ED%86%A0%EB%B9%84%EC%9D%98-%EC%8A%A4%ED%94%84%EB%A7%816-%EC%9D%B4%ED%95%B4%EC%99%80-%EC%9B%90%EB%A6%AC/dashboard
